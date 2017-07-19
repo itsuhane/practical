@@ -1,0 +1,15 @@
+title:         'Practical'
+description:   'A practical template/theme for personal blogging.'
+baseurl:       '' # do not end with /
+url:           '' # do not end with /
+
+author:
+  name:        'itsuhane'
+  email:       'some@email.here'
+
+permalink:     pretty
+
+paginate:      2
+paginate_path: '/blog/page-:num/'
+
+markdown:      kramdown

@@ -1,0 +1,8 @@
+<head>
+  <meta charset="utf-8" />
+  {% if page.title!=null and page.layout!=home %}
+    <title>{{ page.title }} - {{ site.title }}</title>
+  {% else %}
+    <title>{{ site.title }}</title>
+  {% endif %}
+</head>

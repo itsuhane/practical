@@ -1,0 +1,12 @@
+<article>
+  {% if include.title %}
+    {% if include.title_url %}
+      <a href="{{ include.title_url }}"><h1>{{ include.title }}</h1></a>
+    {% else %}
+      <h1>{{ include.title }}</h1>
+    {% endif %}
+  {% endif %}
+  <div>
+    {{ include.content }}
+  </div>
+</article>

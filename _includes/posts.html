@@ -1,0 +1,17 @@
+{% if include.show_contents %}
+  {% if include.paginate %}
+    {% for post in paginator.posts %}
+      {% include article.html title=post.title title_url=post.url content=post.content %}
+    {% endfor %}
+  {% else %}
+    {% for post in site.posts %}
+      {% include article.html title=post.title title_url=post.url content=post.content %}
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <ul>
+    {% for post in site.posts %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}

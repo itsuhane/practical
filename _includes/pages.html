@@ -1,0 +1,11 @@
+<ul>
+  <li><a href="{{ site.baseurl }}/">Home</a></li>
+  <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+  {% for node in site.pages %}
+    {% if node.layout=="page" %}
+      {% if node.title %}
+        <li><a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</ul>
