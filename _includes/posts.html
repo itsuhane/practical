@@ -1,11 +1,13 @@
 {% if include.show_contents %}
   {% if include.paginate %}
     {% for post in paginator.posts %}
-      {% include article.html title=post.title title_url=post.url content=post.content %}
+      {% capture post_url %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
+      {% include article.html title=post.title title_url=post_url content=post.content %}
     {% endfor %}
   {% else %}
     {% for post in site.posts %}
-      {% include article.html title=post.title title_url=post.url content=post.content %}
+      {% capture post_url %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
+      {% include article.html title=post.title title_url=post_url content=post.content %}
     {% endfor %}
   {% endif %}
 {% else %}
