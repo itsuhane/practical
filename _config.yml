@@ -1,7 +1,7 @@
 title:         'Practical'
 description:   'A practical template/theme for personal blogging.'
-baseurl:       '' # do not end with /
-url:           '' # do not end with /
+baseurl:       '/practical' # do not end with /
+url:           'https://itsuhane.github.io' # do not end with /
 
 author:
   name:        'itsuhane'
