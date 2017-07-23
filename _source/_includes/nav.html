@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="banner">
+      <a href="{{ site.baseurl }}/"><img class="avatar" src="{{ site.baseurl }}/assets/images/avatar.png" alt="{{ site.title }}" /></a>
+      <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+      <p class="desc">{{ site.description }}</p>
+    </div>
+    <ul class="menu">
+      {% for item in site.data.nav %}
+        <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

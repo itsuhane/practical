@@ -1,0 +1,4 @@
+{% for post in paginator.posts %}
+  {% capture post_url %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
+  {% include article.html title=post.title title_url=post_url content=post.content date=post.date %}
+{% endfor %}

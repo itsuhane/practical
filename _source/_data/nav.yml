@@ -1,0 +1,13 @@
+- name: "Home"
+  url: "/"
+
+- name: "Blog"
+  url: "/blog/"
+
+- name: "Archive"
+  url: "/archive/"
+
+- name: "Config"
+  url: "/config/"
+
+

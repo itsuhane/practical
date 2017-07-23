@@ -1,5 +1,7 @@
+# Settings for site and template
+
 title:         'Practical'
-description:   'A practical template/theme for personal blogging.'
+description:   'A practical template/theme for personal blogging. Inspired by Hyde, Hydejack and jekyll-doc-theme.'
 baseurl:       '/practical' # do not end with /
 url:           'https://itsuhane.github.io' # do not end with /
 
@@ -7,14 +9,36 @@ author:
   name:        'itsuhane'
   email:       'some@email.here'
 
-permalink:     pretty
+repository:    'itsuhane/practical'
 
-paginate:      2
-paginate_path: '/blog/page-:num/'
+features:
+  latex:       katex
+  fontawesome: true
+  compress:    true
+
+# Settings for Jekyll and GitHub Pages
+
+encoding:      utf-8
 
 markdown:      kramdown
 
+permalink:     pretty
+
+paginate:      10
+paginate_path: '/blog/page-:num/'
+
 gems:
-  - jekyll-sitemap
-  - jekyll-feed
+  - jemoji
+#  - jekyll-sitemap
+#  - jekyll-feed
   - jekyll-sass-converter
+
+#sass:
+#  style: compressed
+
+defaults:
+  - scope:
+      path: "/blog/"
+    values:
+      layout: "post"
+source: '_source'

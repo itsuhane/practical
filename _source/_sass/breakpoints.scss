@@ -1,0 +1,25 @@
+
+$bp-full: "(min-width: 961px)";
+$bp-half: "(max-width: 960px)";
+$bp-narrow: "(max-width: 768px)";
+$bp-print: "print";
+
+@mixin breakpoint($point) {
+  @if ($use-media-query) {
+    @if $point == half {
+      @media #{$bp-half} { @content; }
+    }
+    @else if $point == narrow {
+      @media #{$bp-narrow} { @content; }
+    }
+    @else if $point == print {
+      @media #{$bp-print} { @content; }
+    }
+    @else {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}

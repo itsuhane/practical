@@ -1,0 +1,25 @@
+*, *:before, *:after {
+  //outline: 1px solid red;          // for debug purpose
+  @include box-sizing(inherit);      // see box-sizing for html
+}
+
+html {
+  font-size: 20px;                   // define rem unit
+  @include breakpoint(half) {        // adjust when screen is narrow
+    font-size: 16px;
+  }
+  font-family: $theme-font-sans-serif;     // global font-family
+  line-height: 1.5;                  // standard line height
+  @include box-sizing(border-box);   // make sure box-sizing is properly set and inherit
+  @include text-size-adjust(100%);
+}
+
+// reset margin and padding for body
+html, body, div, p, h1 {
+  @extend %reset-mp;
+}
+
+body {
+  color: $theme-color;
+  background-color: $theme-background-color;        // for conformance
+}

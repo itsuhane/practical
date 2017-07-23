@@ -1,0 +1,24 @@
+%reset-mp {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin text-size-adjust($option) {
+    -webkit-text-size-adjust: $option;
+       -moz-text-size-adjust: $option;
+        -ms-text-size-adjust: $option;
+            text-size-adjust: $option;
+}
+
+@mixin box-sizing($option) {
+    -webkit-box-sizing: $option;
+       -moz-box-sizing: $option;
+            box-sizing: $option;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+}
+
