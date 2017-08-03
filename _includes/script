@@ -1,0 +1,4 @@
+{% comment %}
+  This file is used for adding javascript contents
+{% endcomment %}
+<script type="text/javascript" src="{{ site.baseurl }}/assets/scripts/{{ include.name }}.js"></script>

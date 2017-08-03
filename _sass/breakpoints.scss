@@ -1,12 +1,18 @@
-
-$bp-full: "(min-width: 961px)";
+$bp-4k: "(min-width: 1921px)";
+$bp-full: "(max-width: 1920px)";
 $bp-half: "(max-width: 960px)";
 $bp-narrow: "(max-width: 768px)";
 $bp-print: "print";
 
 @mixin breakpoint($point) {
   @if ($use-media-query) {
-    @if $point == half {
+    @if $point == 4k {
+      @media #{$bp-4k} { @content; }
+    }
+    @else if $point == full {
+      @media #{$bp-full} { @content; }
+    }
+    @else if $point == half {
       @media #{$bp-half} { @content; }
     }
     @else if $point == narrow {

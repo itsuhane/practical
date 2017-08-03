@@ -1,8 +1,12 @@
 <nav class="navbar">
   <div class="navbar-container">
     <div class="banner">
-      <a href="{{ site.baseurl }}/"><img class="avatar" src="{{ site.baseurl }}/assets/images/avatar.png" alt="{{ site.title }}" /></a>
-      <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+      <h1 class="title">
+        <a href="{{ site.baseurl }}/">
+          <img src="{{ site.baseurl }}/assets/images/avatar.png" alt="{{ site.title }}" />
+          {{ site.title }}
+        </a>
+      </h1>
       <p class="desc">{{ site.description }}</p>
     </div>
     <ul class="menu">

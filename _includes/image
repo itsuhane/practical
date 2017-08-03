@@ -1,0 +1,4 @@
+{% comment %}
+  This file is used for adding stylesheet contents
+{% endcomment %}
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles/{{ include.name }}.css" />

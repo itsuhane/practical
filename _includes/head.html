@@ -1,14 +1,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles/practical.css" />
+  {% include style name="practical" %}
   {% unless page.title=="Home" and page.layout=="home" %}
     <title>{{ page.title }} - {{ site.title }}</title>
   {% else %}
     <title>{{ site.title }}</title>
   {% endunless %}
   {% if site.features.fontawesome %}
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/styles/font-awesome.css" />
+    {% include style name="font-awesome" %}
   {% endif %}
   <link rel="manifest" href="{{ site.baseurl }}/manifest.json" />
+  {% include script name="jquery-3.2.1" %}
+  {% include debug_grid.html %}
 </head>

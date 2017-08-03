@@ -2,7 +2,7 @@
 
 title:         'Practical'
 description:   'A practical template/theme for personal blogging. Inspired by Hyde, Hydejack and jekyll-doc-theme.'
-baseurl:       '/practical' # do not end with /
+baseurl:       '/practical'                 # do not end with /
 url:           'https://itsuhane.github.io' # do not end with /
 
 author:
@@ -12,9 +12,18 @@ author:
 repository:    'itsuhane/practical'
 
 features:
-  latex:       katex
-  fontawesome: true
-  compress:    true
+  latex:       false
+  fontawesome: false
+  compress:    false
+
+emoji:
+  src:         '/practical/assets/images'   # should prepend with baseurl
+
+defaults:
+  - scope:
+      path:    '/blog/'
+    values:
+      layout:  'post'
 
 # Settings for Jekyll and GitHub Pages
 
@@ -33,12 +42,7 @@ gems:
 #  - jekyll-feed
   - jekyll-sass-converter
 
-#sass:
-#  style: compressed
+sass:
+  style:       compressed
 
-defaults:
-  - scope:
-      path: "/blog/"
-    values:
-      layout: "post"
-source: '_source'
+exclude:       ['Gemfile', 'Gemfile.lock', 'CNAME', 'LICENSE' ]
