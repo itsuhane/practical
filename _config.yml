@@ -9,7 +9,7 @@ author:
   name:        'itsuhane'
   email:       'some@email.here'
 
-repository:    'itsuhane/practical'
+# repository:    'itsuhane/practical'
 
 features:
   latex:       false
@@ -27,9 +27,9 @@ defaults:
 
 # Settings for Jekyll and GitHub Pages
 
-encoding:      utf-8
+# encoding:      utf-8
 
-markdown:      kramdown
+# markdown:      kramdown
 
 permalink:     pretty
 
@@ -42,7 +42,7 @@ gems:
 #  - jekyll-feed
   - jekyll-sass-converter
 
-sass:
-  style:       compressed
+#sass:
+#  style:       compressed
 
 exclude:       ['Gemfile', 'Gemfile.lock', 'CNAME', 'LICENSE' ]
