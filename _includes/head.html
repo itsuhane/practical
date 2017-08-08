@@ -11,7 +11,7 @@
   {% if site.features.fontawesome %}
     {% include style name="font-awesome" %}
   {% endif %}
-  <link rel="manifest" href="{{ site.baseurl }}/manifest.json" />
+  {% include favicon.html %}
   {% include script name="jquery-3.2.1" %}
   {% include debug_grid.html %}
   <style type="text/css"> <!-- IE fix -->
