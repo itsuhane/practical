@@ -146,6 +146,7 @@ a:hover, a:focus {
   }
 
   .title {
+    margin-top: 3rem;
     margin-bottom: 0;
     white-space: nowrap;
     overflow: hidden;
@@ -170,16 +171,18 @@ a:hover, a:focus {
   h3 {
     @include font-size(1.5rem);
     margin-top: 0.5*$line-height;
+    margin-bottom: 0.5*$line-height;
   }
 
   h4 {
     @include font-size(1.25rem);
     margin-top: 0.5*$line-height;
+    margin-bottom: 0.5*$line-height;
   }
 
   h5 {
-    margin-top: 0.5*$line-height;
     @include font-size(1rem);
+    margin-top: 0.5*$line-height;
   }
 
   h6 {
