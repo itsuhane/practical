@@ -14,4 +14,8 @@
   <link rel="manifest" href="{{ site.baseurl }}/manifest.json" />
   {% include script name="jquery-3.2.1" %}
   {% include debug_grid.html %}
+	<style type="text/css"> <!-- IE fix -->
+		li a {display:inline-block;}
+		li a {display:block;}
+	</style>
 </head>
