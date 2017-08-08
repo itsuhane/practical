@@ -7,7 +7,3 @@
 - name: "Archive"
   url: "/archive/"
 
-- name: "Config"
-  url: "/config/"
-
-
