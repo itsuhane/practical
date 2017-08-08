@@ -6,7 +6,7 @@
 {% else %}
   <ul>
     {% for post in site.posts %}
-    <li><a href="{{ site.baseurl }}{{ post.url }}">{% include format-title.html title=post.title %}</a></li>
+    <li><a href="{{ site.baseurl }}{{ post.url }}"><div>{% include format-title.html title=post.title %}</div></a></li>
     {% endfor %}
   </ul>
 {% endif %}

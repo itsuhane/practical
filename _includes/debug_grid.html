@@ -4,7 +4,7 @@
 {% include script name="hashgrid" %}
 <script type="text/javascript">
   $(document).ready(function() {
-    var grid = new hashgrid();
+    var grid = new hashgrid({numberOfGrids: 2});
   });
 </script>
 <style type="text/css">
@@ -46,7 +46,7 @@
 
 #grid div.vert.first-line{
 
-    margin-left: 1rem;
+    margin-left: 2rem;
 
 }
 
@@ -72,23 +72,24 @@
 * When using more than one grid, remember to set the numberOfGrids 
 * option in the hashgrid.js file.
 */
+/*
 #grid.grid-1 div.vert{
-
-    /* Vertical grid line colour for grid 1 */
     border-color: darkturquoise;
 
 }
 #grid.grid-2{
 
-    /* Adjustments */
     padding: 0 160px;
     width: 660px;
 
 }
 #grid.grid-2 div.vert{
-
-    /* Vertical grid line colour for grid 2 */
     border-color: crimson;
 
+}
+*/
+
+#grid.grid-2 div.vert.first-line {
+  margin-left: 1rem;
 }
 </style>

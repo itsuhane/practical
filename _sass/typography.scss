@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+$line-height: 1.5rem;
+
+@mixin font-size($option) {
+  font-size: $option;
+  line-height: ceil($option/$line-height)*$line-height;
+}
+
+%mt {
+  margin-top: $line-height;
+}
+
+%mb {
+  margin-bottom: $line-height;
+}
+
+%mbt {
+  @extend %mt;
+  @extend %mb;
+}

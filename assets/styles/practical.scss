@@ -4,16 +4,28 @@
 
 $use-media-query: true;
 
-$nav-full-width: 15rem;
-
-
 @import "theme";
 @import "mixins";
 @import "breakpoints";
 @import "neat";
+@import "typography";
 
 %marked {
   outline: 1px solid red;
+}
+
+code {
+  font-family: $theme-font-monospace;
+  background-color: $theme-background-color-light;
+}
+
+a, a:visited {
+  color: $theme-color;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
 }
 
 .navbar {
@@ -26,7 +38,6 @@ $nav-full-width: 15rem;
   color: $theme-background-color;
   background-color: $theme-color;
 
-  // TODO: temp code
   a, a:visited {
     color: $theme-background-color;
   }
@@ -34,22 +45,28 @@ $nav-full-width: 15rem;
   .navbar-container {
     position: absolute;
     bottom: 0;
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
 
-    .title {
-      font-size: 2rem;
-      line-height: 4.5rem;
+    .avatar {
+      float: left;
+      overflow: auto;
       img {
         display: block;
-        width: 6rem;
-        height: 6rem;
+        width: 5rem;
+        height: 5rem;
         background-color: $theme-background-color;
         @include border-radius(0.5rem);
       }
     }
 
+    h1 {
+      clear: left;
+      font-size: 2rem;
+      line-height: 3.75rem;
+    }
+
     .menu {
-      margin: 1.5rem 0rem;
+      margin: 1.25rem 0rem;
       padding: 0;
       list-style-type: none;
     }
@@ -57,5 +74,150 @@ $nav-full-width: 15rem;
 }
 
 .content {
-  margin-left: 19rem;
+  @include font-size(1rem);
+  max-width: 35rem;
+  margin: $line-height*4 7rem $line-height*4 25rem;
+
+  article { position: relative; }
+
+  .time {
+    color: $theme-color-light;
+    @include font-size(0.75rem);
+    font-weight: bold;
+    margin-bottom: 0.5*$line-height;
+  }
+
+  .article-content {
+    a {
+      border-bottom: 1px dashed $theme-color-light;
+    }
+    a:hover, a:focus {
+      text-decoration: none;
+      border-bottom: 2px solid $theme-color;
+    }
+  }
+
+  p {
+    margin-bottom: 0.5*$line-height;
+  }
+
+  blockquote {
+    background-color: $theme-background-color-light;
+    border-left: 5px solid $theme-color-light;
+    padding: 0.5*$line-height 1rem;
+    margin: 0.5*$line-height 0;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  code {
+    font-size: 85%;
+    line-height: 150%;
+    padding: .25em .5em;
+    @include border-radius(3px);
+  }
+
+  pre {
+    font-family: $theme-font-monospace;
+    font-size: 100%;
+    line-height: 150%;
+    background-color: $theme-background-color-light;
+    border-left: 5px solid $theme-background-color-light;
+    padding: 0.5*$line-height 1rem;
+    margin: 0.5*$line-height 0;
+    code {
+      font-size: 100%;
+      line-height: 150%;
+      padding: 0;
+    }
+    white-space: pre-wrap;
+  }
+
+  h1 {
+    @include font-size(2rem);
+    margin-top: 0.5*$line-height;
+    margin-bottom: 0.5*$line-height;
+  }
+
+  .title-container {
+    position: relative;
+    height: 2*$line-height;
+  }
+
+  .title {
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 9990;
+  }
+
+  .title:hover {
+    position: relative;
+    white-space: normal;
+    background: linear-gradient(to top, transparentize($theme-background-color, 1) 0, transparentize($theme-background-color, 0.15) 1rem);
+    padding-bottom: 1rem;
+    z-index: 9999;
+  }
+
+  h2 {
+    @include font-size(1.75rem);
+    margin-top: 0.5*$line-height;
+    margin-bottom: 0.5*$line-height;
+  }
+
+  h3 {
+    @include font-size(1.5rem);
+    margin-top: 0.5*$line-height;
+  }
+
+  h4 {
+    @include font-size(1.25rem);
+    margin-top: 0.5*$line-height;
+  }
+
+  h5 {
+    margin-top: 0.5*$line-height;
+    @include font-size(1rem);
+  }
+
+  h6 {
+    @include font-size(0.75rem);
+  }
+
+  hr {
+    margin-top: $line-height;
+    padding: 0 0 0 0;
+    border: none;
+    border-top: 1px solid $theme-color-light;
+    color: $theme-color-light;
+    text-align: left;
+    height: 1rem;
+    overflow: visible;
+  }
+
+  hr:after {
+    // content: '\2756'; // black diamond minus white X
+    content: '//';
+    display: inline-block;
+    position: relative;
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
+    top: -0.9rem;
+    background: $theme-background-color;
+    z-index: 99;
+  }
+
+  ul, ol {
+    @include font-size(1rem);
+    margin-top: 0.5*$line-height;
+    margin-bottom: 0.5*$line-height;
+  }
+
+  .emoji {
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline;
+  }
 }

@@ -7,6 +7,7 @@
   {% else %}
     <title>{{ site.title }}</title>
   {% endunless %}
+  {% include style name="highlight" %}
   {% if site.features.fontawesome %}
     {% include style name="font-awesome" %}
   {% endif %}
