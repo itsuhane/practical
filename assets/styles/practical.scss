@@ -22,6 +22,9 @@ code {
 a, a:visited {
   color: $theme-color;
   text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 a:hover, a:focus {
@@ -215,6 +218,11 @@ a:hover, a:focus {
     margin-bottom: 0.5*$line-height;
   }
 
+  li a { // a weird workaround for IE/Edge where extra line is inserted.
+    display: inline-block;
+    display: block;
+  }
+  
   .emoji {
     width: 1em;
     height: 1em;
