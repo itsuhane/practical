@@ -14,11 +14,12 @@ $use-media-query: true;
   outline: 1px solid red;
 }
 
-code {
-  font-family: $theme-font-monospace;
-  background-color: $theme-background-color-light;
+%margin-tb {
+  margin: 0.5*$line-height 0;
+  @extend %reset-padding;
 }
 
+// global style for links
 a, a:visited {
   color: $theme-color;
   text-decoration: none;
@@ -28,66 +29,184 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+h1 {
+  @extend %margin-tb;
+  @include font-size(2rem);
+}
+
+h2 {
+  @extend %margin-tb;
+  @include font-size(1.75rem);
+}
+
+h3 {
+  @extend %margin-tb;
+  @include font-size(1.5rem);
+}
+
+h4 {
+  @extend %margin-tb;
+  @include font-size(1.25rem);
+}
+
+h5 {
+  margin: 0.5*$line-height 0 0 0;
+  @extend %reset-padding;
+  @include font-size(1rem);
+}
+
+h6 {
+  @extend %reset;
+  @include font-size(0.75rem);
+}
+
+// global style for paragraphs
+p {
+  margin: 0 0 0.5*$line-height 0;
+  @extend %reset-padding;
+}
+
+hr {
+  margin: 0.5*$line-height 0 0 0;
+  @extend %reset-padding;
+  border: none;
+  border-top: 1px solid $theme-color-light;
+  color: $theme-color-light;
+  text-align: left;
+  height: 0.5*$line-height;
+  overflow: visible;
+}
+
+hr:after {
+  // content: '\2756'; // black diamond minus white X
+  content: '//';
+  display: inline-block;
+  position: relative;
+  font-size: 0.75rem;
+  padding: 0 0.25rem;
+  top: -0.9rem;
+  background: $theme-background-color;
+  z-index: 99;
+}
+
+ul, ol {
+  margin: 0.5*$line-height 0;
+  padding: 0 1em;
+}
+
+ul ul, ul ol, ol ul, ol ol {
+  @extend %reset-margin;
+}
+
+blockquote {
+  margin: 0.5*$line-height 0;
+  padding: 0.5*$line-height 1rem;
+  background-color: $theme-background-color-light;
+  border-left: 5px solid $theme-color-light;
+  p:last-child { margin-bottom: 0; }
+}
+
+code {
+  padding: .25em .5em;
+  font-family: $theme-font-monospace;
+  font-size: 85%;
+  line-height: 150%;
+  background-color: $theme-background-color-light;
+  @include border-radius(3px);
+}
+
+pre {
+  margin: 0.5*$line-height 0;
+  padding: 0.5*$line-height 1rem;
+  font-family: $theme-font-monospace;
+  font-size: 100%;
+  line-height: 150%;
+  background-color: $theme-background-color-light;
+  border-left: 5px solid $theme-background-color-light;
+  code { @extend %reset-padding; }
+  white-space: pre-wrap;
+}
+
+sup {
+  vertical-align: baseline;
+}
+
+sup:before {
+  content: " [";
+}
+
+sup:after {
+  content: "] ";
+}
+
+img {
+  display: block;
+}
+
+.emoji {
+  width: 1em;
+  height: 1em;
+  vertical-align: baseline;
+  display: inline;
+}
+
+// this is used for proper positioning
+article { position: relative; }
+
 .navbar {
+  @extend %reset;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 18rem;
 
+  // navbar use flipped color
   color: $theme-background-color;
   background-color: $theme-color;
-
-  a, a:visited {
-    color: $theme-background-color;
-  }
+  a, a:visited { color: $theme-background-color; }
 
   .navbar-container {
+    @extend %reset-margin;
+    padding: $line-height 1rem;
     position: absolute;
     bottom: 0;
-    padding: $line-height 1rem;
 
     .avatar {
       float: left;
       overflow: auto;
       img {
         display: block;
-        width: 5rem;
-        height: 5rem;
+        width: 3*$line-height;
+        height: 3*$line-height;
         background-color: $theme-background-color;
         @include border-radius(0.5rem);
       }
     }
 
     h1 {
+      margin: $line-height 0;
+      @extend %reset-padding;
       clear: left;
-      font-size: 2rem;
-      line-height: 6*$line-height - 5rem;
+      @include font-size(2rem);
     }
+
+    // .desc inherits p, which is set globally
 
     .menu {
       margin: $line-height 0rem;
-      padding: 0;
+      @extend %reset-padding;
       list-style-type: none;
     }
   }
 }
 
-.content {
-  @include font-size(1rem);
-  max-width: 35rem;
+.container {
   margin: $line-height*4 7rem $line-height*4 25rem;
+  @extend %reset-padding;
+  max-width: 35rem;
 
-  article { position: relative; }
-
-  .time {
-    color: $theme-color-light;
-    @include font-size(0.75rem);
-    font-weight: bold;
-    margin-bottom: 0.5*$line-height;
-  }
-
-  .article-content {
+  .article {
     a {
       border-bottom: 1px dashed $theme-color-light;
     }
@@ -95,49 +214,6 @@ a:hover, a:focus {
       text-decoration: none;
       border-bottom: 2px solid $theme-color;
     }
-  }
-
-  p {
-    margin-bottom: 0.5*$line-height;
-  }
-
-  blockquote {
-    background-color: $theme-background-color-light;
-    border-left: 5px solid $theme-color-light;
-    padding: 0.5*$line-height 1rem;
-    margin: 0.5*$line-height 0;
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  code {
-    font-size: 85%;
-    line-height: 150%;
-    padding: .25em .5em;
-    @include border-radius(3px);
-  }
-
-  pre {
-    font-family: $theme-font-monospace;
-    font-size: 100%;
-    line-height: 150%;
-    background-color: $theme-background-color-light;
-    border-left: 5px solid $theme-background-color-light;
-    padding: 0.5*$line-height 1rem;
-    margin: 0.5*$line-height 0;
-    code {
-      font-size: 100%;
-      line-height: 150%;
-      padding: 0;
-    }
-    white-space: pre-wrap;
-  }
-
-  h1 {
-    @include font-size(2rem);
-    margin-top: 0.5*$line-height;
-    margin-bottom: 0.5*$line-height;
   }
 
   .title-container {
@@ -162,65 +238,18 @@ a:hover, a:focus {
     z-index: 9999;
   }
 
-  h2 {
-    @include font-size(1.75rem);
-    margin-top: 0.5*$line-height;
-    margin-bottom: 0.5*$line-height;
-  }
-
-  h3 {
-    @include font-size(1.5rem);
-    margin-top: 0.5*$line-height;
-    margin-bottom: 0.5*$line-height;
-  }
-
-  h4 {
-    @include font-size(1.25rem);
-    margin-top: 0.5*$line-height;
-    margin-bottom: 0.5*$line-height;
-  }
-
-  h5 {
-    @include font-size(1rem);
-    margin-top: 0.5*$line-height;
-  }
-
-  h6 {
-    @include font-size(0.75rem);
-  }
-
-  hr {
-    margin-top: $line-height;
-    padding: 0 0 0 0;
-    border: none;
-    border-top: 1px solid $theme-color-light;
+  .time {
     color: $theme-color-light;
-    text-align: left;
-    height: 1rem;
-    overflow: visible;
-  }
-
-  hr:after {
-    // content: '\2756'; // black diamond minus white X
-    content: '//';
-    display: inline-block;
-    position: relative;
-    font-size: 0.75rem;
-    padding: 0 0.25rem;
-    top: -0.9rem;
-    background: $theme-background-color;
-    z-index: 99;
-  }
-
-  ul, ol {
-    @include font-size(1rem);
-    margin-top: 0.5*$line-height;
+    @include font-size(0.75rem);
+    font-weight: bold;
     margin-bottom: 0.5*$line-height;
   }
+}
 
-  .emoji {
-    width: 1em;
-    height: 1em;
-    vertical-align: baseline;
+.post-list {
+  @extend %reset-padding;
+  list-style-type: none;
+  li {
+    margin: 0.5*$line-height 0;
   }
 }
