@@ -1,21 +1,19 @@
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {% include style name="practical" %}
-  {% unless page.title=="Home" and page.layout=="home" %}
-    <title>{{ page.title }} - {{ site.title }}</title>
-  {% else %}
-    <title>{{ site.title }}</title>
-  {% endunless %}
-  {% include style name="highlight" %}
-  {% if site.features.fontawesome %}
-    {% include style name="font-awesome" %}
-  {% endif %}
-  {% include favicon.html %}
-  {% include script name="jquery-3.2.1" %}
-  {% include debug_grid.html %}
-  <style type="text/css"> <!-- IE fix -->
-    li a {display:inline-block;}
-    li a {display:block;}
-  </style>
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{% include style name="practical" %}
+{% unless page.title=="Home" and page.layout=="home" %}
+  <title>{{ page.title }} - {{ site.title }}</title>
+{% else %}
+  <title>{{ site.title }}</title>
+{% endunless %}
+{% include style name="highlight" %}
+{% if site.features.fontawesome %}
+  {% include style name="font-awesome" %}
+{% endif %}
+{% include favicon.html %}
+{% include script name="jquery-3.2.1" %}
+{% include debug_grid.html %}
+<style type="text/css"> <!-- IE fix -->
+  li a {display:inline-block;}
+  li a {display:block;}
+</style>
